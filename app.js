@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb+srv://pthnhung:nh14072002@clusterie213.yj32h3e.mongodb.net/userDB')
+mongoose.connect(process.env.CONNECT_MONGODB_STRING)
 
 const userSchema = new mongoose.Schema({
     username: {
